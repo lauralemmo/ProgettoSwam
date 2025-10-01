@@ -1,6 +1,6 @@
 package DomainModel;
 
-public class ConcreteExerciseBuilder implements ExerciseBuilder {
+/*public class ConcreteExerciseBuilder implements ExerciseBuilder {
     private Exercise exercise;
 
     public ConcreteExerciseBuilder() {
@@ -10,12 +10,6 @@ public class ConcreteExerciseBuilder implements ExerciseBuilder {
     @Override
     public ExerciseBuilder setName(String name) {
         exercise.setName(name);
-        return this;
-    }
-
-    @Override
-    public ExerciseBuilder setDescription(String description) {
-        exercise.setDescription(description);
         return this;
     }
 
@@ -35,19 +29,8 @@ public class ConcreteExerciseBuilder implements ExerciseBuilder {
     }
 
     @Override
-    public ExerciseBuilder setDuration(int duration) {
-        exercise.setDuration(duration);
-        return this;
-    }
-
-    @Override
-    public ExerciseBuilder setIntensity(String intensity) {
-        exercise.setIntensity(intensity);
-        return this;
-    }
-
-    @Override
     public Exercise build() {
         return exercise;
     }
 }
+*/

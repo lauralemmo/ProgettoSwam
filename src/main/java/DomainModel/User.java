@@ -23,6 +23,9 @@ public class User {
         this.username = username;
     }
     // Getters and Setters
+    public User(String name){
+        this.name = name;
+    }
 
     public String getName() {
         return name;
