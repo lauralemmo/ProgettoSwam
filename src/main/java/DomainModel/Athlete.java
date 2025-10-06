@@ -1,11 +1,13 @@
 package DomainModel;
 
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 
 public class Athlete {
     private String height;
     private String weight;
     private User user;
+    @OneToOne
     private Subscription subscription;
     private int workoutPlanId;
     private ArrayList<Booking> bookings;
