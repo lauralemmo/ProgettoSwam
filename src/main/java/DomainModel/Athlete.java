@@ -1,23 +1,27 @@
 package DomainModel;
 
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Athlete {
+public class Athlete extends User {
     private String height;
     private String weight;
-    private User user;
     @OneToOne
     private Subscription subscription;
-    private int workoutPlanId;
+    @OneToOne
+    private WorkoutPlan workoutPlan;
+    @OneToMany
     private ArrayList<Booking> bookings;
 
-    public Athlete(String height, String weight, User user, int workoutPlanId) {
+    public Athlete(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
+                   LocalDate birth_date, String height, String weight) {
+        super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.height = height;
         this.weight = weight;
-        this.user = user;
         this.subscription = new Subscription();
-        this.workoutPlanId = workoutPlanId;
+        this.workoutPlan = new workoutPlan();
         this.bookings = new ArrayList<>();
     }
 
@@ -37,14 +41,6 @@ public class Athlete {
         this.weight = weight;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Subscription getSubscription() {
         return subscription;
     }
@@ -53,12 +49,12 @@ public class Athlete {
         this.subscription = subscription;
     }
 
-    public int getWorkoutPlanId() {
-        return workoutPlanId;
+    public WorkoutPlan getWorkoutPlan() {
+        return workoutPlan;
     }
 
-    public void setWorkoutPlanId(int workoutPlanId) {
-        this.workoutPlanId = workoutPlanId;
+    public void setWorkoutPlan(WorkoutPlan workoutPlan) {
+        this.workoutPlan = workoutPlan;
     }
 
     public ArrayList<Booking> getBookings() {
