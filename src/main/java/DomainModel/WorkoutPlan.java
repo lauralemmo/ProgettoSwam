@@ -1,19 +1,22 @@
 package DomainModel;
 
+import javax.persistence.OneToMany;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class WorkoutPlan {
-    private Date date;
-    private ArrayList<Exercise> exercises;
-    private String personalTrainer;
+    private LocalDate date;
+    @OneToMany
+    private ArrayList<ExerciseWorkoutPlan> exercises;
+    private String personalTrainer; // nome del personal trainer che ha creato il piano (è una stringa per semplicità)
 
-    public WorkoutPlan(Date date) {
+    public WorkoutPlan(LocalDate date) {
         this.date = date;
         this.exercises = new ArrayList<>();
     }
 
-    public WorkoutPlan(Date date, String personalTrainer) {
+    public WorkoutPlan(LocalDate date, String personalTrainer) {
         this.personalTrainer = personalTrainer;
         this.date = date;
         this.exercises = new ArrayList<>();
@@ -27,7 +30,7 @@ public class WorkoutPlan {
         this.exercises = new ArrayList<>();
     }
 
-    public void addExercise(Exercise exercise) {
+    public void addExercise(ExerciseWorkoutPlan exercise) {
         this.exercises.add(exercise);
     }
     public void setPersonalTrainer(String personalTrainer) {
@@ -37,8 +40,8 @@ public class WorkoutPlan {
         System.out.println((personalTrainer != null ? "Personal Trainer: " + personalTrainer : "No Personal Trainer Assigned"));
         System.out.println("Date: " + date);
         System.out.println("Exercises:");
-        for (Exercise exercise : exercises) {
-            System.out.println("- " + exercise.getName()+ " : " + exercise.getNumSeries() + " sets of " + exercise.getNumRepetitions() + " reps "+ exercise.getWeight()+ " kg");
+        for (ExerciseWorkoutPlan exercise : exercises) {
+            System.out.println("- " + exercise.getExercise().getName()+ " : " + exercise.getNumSeries() + " sets of " + exercise.getNumRepetitions() + " reps "+ exercise.getWeight()+ " kg");
         }
     }
 }
