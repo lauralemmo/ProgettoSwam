@@ -1,10 +1,12 @@
 package DomainModel;
 
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+@Entity
 public class Athlete extends User {
     private String height;
     private String weight;

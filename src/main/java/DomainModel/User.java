@@ -1,8 +1,12 @@
 package DomainModel;
 
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 import java.util.Date;
-
+@MappedSuperclass
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User {
     private String name;
     private String surname;

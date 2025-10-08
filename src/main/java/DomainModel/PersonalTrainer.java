@@ -1,10 +1,12 @@
 package DomainModel;
 
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+@Entity
 public class PersonalTrainer extends User{
     private int salary;
     private boolean active;
