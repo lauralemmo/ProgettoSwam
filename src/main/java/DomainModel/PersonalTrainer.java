@@ -25,6 +25,9 @@ public class PersonalTrainer extends User{
         this.workoutPlans = new ArrayList<>();
         this.courses = new ArrayList<>();
     }
+    public PersonalTrainer(String name){
+        super(name);
+    }
 
     public int getSalary() {
         return salary;
@@ -75,11 +78,11 @@ public class PersonalTrainer extends User{
     }
 
     // questo metodo andrà poi nella business logic
-    /*public WorkoutPlan createPlan(WorkoutPlanBuilder workoutPlanBuilder, Consumer<WorkoutPlanBuilder> strategy) {
-        workoutPlanBuilder.setTrainer(this.user.getName());
+    public WorkoutPlan createPlan(WorkoutPlanBuilder workoutPlanBuilder, Consumer<WorkoutPlanBuilder> strategy) {
+        workoutPlanBuilder.setTrainer(this.getName());
         strategy.accept(workoutPlanBuilder);
         return workoutPlanBuilder.buildWorkoutPlan();
-    }*/
+    }
 
 }
 

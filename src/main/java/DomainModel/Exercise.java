@@ -6,9 +6,11 @@ public class Exercise {
     private String description;
     public Exercise(String name) {
         this.name = name;
-
     }
-
+    public Exercise(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 //metodi getter e setter
 
     public String getName() {
