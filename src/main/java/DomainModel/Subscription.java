@@ -2,6 +2,7 @@ package DomainModel;
 
 import java.time.LocalDate;
 
+
 public class Subscription {
     private LocalDate start_date;
     private LocalDate end_date;

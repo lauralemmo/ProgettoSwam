@@ -1,6 +1,8 @@
 package DomainModel;
 
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
