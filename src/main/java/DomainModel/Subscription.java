@@ -1,13 +1,38 @@
 package DomainModel;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Subscription {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idSubscription;
     private LocalDate start_date;
     private LocalDate end_date;
     private String price;
     private String type;
-    private Boolean active;
+    private boolean active;
+
+    public Subscription(int idSubscription, LocalDate start_date, LocalDate end_date, String price, String type, boolean active) {
+        this.idSubscription = idSubscription;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.price = price;
+        this.type = type;
+        this.active = active;
+    }
+
+    public int getIdSubscription() {
+        return idSubscription;
+    }
+
+    public void setIdSubscription(int idSubscription) {
+        this.idSubscription = idSubscription;
+    }
 
     public LocalDate getStart_date() {
         return start_date;
@@ -41,11 +66,11 @@ public class Subscription {
         this.type = type;
     }
 
-    public Boolean getActive() {
+    public boolean getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 }

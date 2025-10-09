@@ -1,19 +1,32 @@
 package DomainModel;
 
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 public class ExerciseWorkoutPlan {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idEW;
     private int numSeries;
     private int numRepetitions;
     private double weight;
     @ManyToOne
     private Exercise exercise;
-    public ExerciseWorkoutPlan(Exercise exercise, int numSeries, int numRepetitions, double weight) {
-        this.exercise = exercise;
+
+    public ExerciseWorkoutPlan(int idEW, int numSeries, int numRepetitions, double weight, Exercise exercise) {
+        this.idEW = idEW;
         this.numSeries = numSeries;
         this.numRepetitions = numRepetitions;
         this.weight = weight;
+        this.exercise = exercise;
+    }
+
+    public int getIdEW() {
+        return idEW;
+    }
+
+    public void setIdEW(int idEW) {
+        this.idEW = idEW;
     }
 
     public int getNumSeries() {

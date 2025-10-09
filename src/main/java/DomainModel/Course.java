@@ -1,11 +1,14 @@
 package DomainModel;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+@Entity
 public class Course {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idCourse;
     private String name;
     private int numMembers;
     private int numMax;
@@ -14,8 +17,8 @@ public class Course {
     @OneToMany
     private ArrayList<Occurrence> occurrences;
 
-    public Course(int id, String name, int numMembers, int numMax) {
-        this.id = id;
+    public Course(int idCourse, String name, int numMembers, int numMax) {
+        this.idCourse = idCourse;
         this.name = name;
         this.numMembers = numMembers;
         this.numMax = numMax;
@@ -25,11 +28,11 @@ public class Course {
 
 
     public int getId() {
-        return id;
+        return idCourse;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idCourse = id;
     }
 
     public String getName() {
