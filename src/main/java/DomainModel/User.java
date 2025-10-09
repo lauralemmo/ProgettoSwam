@@ -1,12 +1,13 @@
 package DomainModel;
 
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
+import jakarta.annotation.Generated;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 @MappedSuperclass
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Entity
 public abstract class User {
     private String name;
     private String surname;
@@ -14,6 +15,8 @@ public abstract class User {
     private String password;
     private String email;
     private String phone_number;
+    @Id
+    @Column(length = 16)
     private String tax_code;
     private LocalDate birth_date;
 
