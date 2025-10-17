@@ -15,7 +15,7 @@ public class Course {
     @OneToMany
     private ArrayList<Booking> bookings;
     @OneToMany
-    private ArrayList<Occurrence> occurrences;
+    @Embedded private ArrayList<Occurrence> occurrences;
 
     public Course(int idCourse, String name, int numMembers, int numMax) {
         this.idCourse = idCourse;
