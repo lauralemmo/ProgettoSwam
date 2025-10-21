@@ -4,19 +4,17 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Entity
+@Embeddable
 public class Occurrence {
-    @Id
+   /* @Id Se è Annotato come @Embeddable non può avere un Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idOccurrence;
+    private int idOccurrence;*/
 
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    private LocalDate date;
 
     private String hours;
 
-    public Occurrence(int idOccurrence, Date date, String hours) {
-        this.idOccurrence = idOccurrence;
+    public Occurrence(LocalDate date, String hours) {
         this.date = date;
         this.hours = hours;
     }
@@ -25,19 +23,11 @@ public class Occurrence {
 
     }
 
-    public int getIdOccurrence() {
-        return idOccurrence;
-    }
-
-    public void setIdOccurrence(int idOccurrence) {
-        this.idOccurrence = idOccurrence;
-    }
-
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

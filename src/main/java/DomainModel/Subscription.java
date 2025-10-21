@@ -9,15 +9,13 @@ public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSubscription;
-    @Temporal(TemporalType.DATE)
-    private Date start_date;
-    @Temporal(TemporalType.DATE)
-    private Date end_date;
+    private LocalDate start_date;
+    private LocalDate end_date;
     private String price;
     private String type;
     private boolean active;
 
-    public Subscription(int idSubscription, Date start_date, Date end_date, String price, String type, boolean active) {
+    public Subscription(int idSubscription, LocalDate start_date, LocalDate end_date, String price, String type, boolean active) {
         this.idSubscription = idSubscription;
         this.start_date = start_date;
         this.end_date = end_date;
@@ -38,19 +36,19 @@ public class Subscription {
         this.idSubscription = idSubscription;
     }
 
-    public Date getStart_date() {
+    public LocalDate getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(Date start_date) {
+    public void setStart_date(LocalDate start_date) {
         this.start_date = start_date;
     }
 
-    public Date getEnd_date() {
+    public LocalDate getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Date end_date) {
+    public void setEnd_date(LocalDate end_date) {
         this.end_date = end_date;
     }
 

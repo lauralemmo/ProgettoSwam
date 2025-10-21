@@ -19,7 +19,7 @@ public class Athlete extends User {
     private ArrayList<Booking> bookings;
 
     public Athlete(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
-                   Date birth_date, String height, String weight, int idSubscription, Date start_date, Date end_date, String price, String type, boolean active, int idWorkoutPlan, Date date, String personalTrainer) {
+                   LocalDate birth_date, String height, String weight, int idSubscription, LocalDate start_date, LocalDate end_date, String price, String type, boolean active, int idWorkoutPlan, LocalDate date, String personalTrainer) {
         super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.height = height;
         this.weight = weight;

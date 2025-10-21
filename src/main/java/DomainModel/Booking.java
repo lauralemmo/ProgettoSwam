@@ -9,10 +9,10 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBooking;
-    @Temporal(TemporalType.DATE)
-    private Date date;
 
-    public Booking(int idBooking, Date date) {
+    private LocalDate date;
+
+    public Booking(int idBooking, LocalDate date) {
         this.idBooking = idBooking;
         this.date = date;
     }
@@ -29,10 +29,10 @@ public class Booking {
         this.idBooking = idBooking;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
-    public void setDate(Date date) {
+    public void setDate(Date Localdate) {
         this.date = date;
     }
 }

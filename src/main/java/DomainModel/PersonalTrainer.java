@@ -13,17 +13,15 @@ import java.util.function.Consumer;
 public class PersonalTrainer extends User{
     private int salary;
     private boolean active;
-    @Temporal(TemporalType.DATE)
-    private Date startDate;
-    @Temporal(TemporalType.DATE)
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     @OneToMany
     private ArrayList<WorkoutPlan> workoutPlans;
     @OneToMany
     private ArrayList<Course> courses;
 
     public PersonalTrainer(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
-                           Date birth_date, int salary, boolean active, Date startDate, Date endDate, Date date, String personalTrainer) {
+                           LocalDate birth_date, int salary, boolean active, LocalDate startDate, LocalDate endDate, Date date, String personalTrainer) {
         super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.salary = salary;
         this.active = active;
@@ -56,19 +54,19 @@ public class PersonalTrainer extends User{
         this.active = active;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

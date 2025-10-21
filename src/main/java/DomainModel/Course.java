@@ -9,12 +9,16 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCourse;
+
     private String name;
     private int numMembers;
     private int numMax;
+
     @OneToMany
     private ArrayList<Booking> bookings;
-    @OneToMany
+
+    @ElementCollection
+    @CollectionTable(name = "course_occurrences", joinColumns = @JoinColumn(name = "course_id"))
     private ArrayList<Occurrence> occurrences;
 
     public Course(int idCourse, String name, int numMembers, int numMax) {

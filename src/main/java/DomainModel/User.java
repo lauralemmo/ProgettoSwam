@@ -5,7 +5,7 @@ import jakarta.annotation.Generated;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
-@MappedSuperclass
+@MappedSuperclass //impedisce query su User (query polimorfiche)
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
 public abstract class User {
@@ -19,10 +19,9 @@ public abstract class User {
     @Column(length = 16)
     private String tax_code;
 
-    @Temporal(TemporalType.DATE)
-    private Date birth_date;
+    private LocalDate birth_date;
 
-    public User(String name, String surname, String username, String password, String email, String phone_number, String tax_code, Date birth_date){
+    public User(String name, String surname, String username, String password, String email, String phone_number, String tax_code, LocalDate birth_date){
         this.name = name;
         this.surname = surname;
         this.username = username;
@@ -90,11 +89,11 @@ public abstract class User {
         this.tax_code = tax_code;
     }
 
-    public Date getBirth_date() {
+    public LocalDate getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
     }
 
