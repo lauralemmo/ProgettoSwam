@@ -5,6 +5,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Entity
 public class Athlete extends User {
@@ -18,7 +19,7 @@ public class Athlete extends User {
     private ArrayList<Booking> bookings;
 
     public Athlete(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
-                   LocalDate birth_date, String height, String weight, int idSubscription, LocalDate start_date, LocalDate end_date, String price, String type, boolean active, int idWorkoutPlan, LocalDate date, String personalTrainer) {
+                   LocalDate birth_date, String height, String weight, int idSubscription, Date start_date, Date end_date, String price, String type, boolean active, int idWorkoutPlan, Date date, String personalTrainer) {
         super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.height = height;
         this.weight = weight;

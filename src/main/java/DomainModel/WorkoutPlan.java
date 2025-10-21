@@ -10,17 +10,18 @@ public class WorkoutPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idWorkoutPlan;
-    private LocalDate date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
     @OneToMany
     private ArrayList<ExerciseWorkoutPlan> exercises;
     private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplicità)
 
-    public WorkoutPlan(LocalDate date) {
+    public WorkoutPlan(Date date) {
         this.date = date;
         this.exercises = new ArrayList<>();
     }
 
-    public WorkoutPlan(int idWorkoutPlan, LocalDate date, String personalTrainerName) {
+    public WorkoutPlan(int idWorkoutPlan, Date date, String personalTrainerName) {
         this.idWorkoutPlan = idWorkoutPlan;
         this.personalTrainerName = personalTrainerName;
         this.date = date;
@@ -61,11 +62,11 @@ public class WorkoutPlan {
         this.idWorkoutPlan = idWorkoutPlan;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

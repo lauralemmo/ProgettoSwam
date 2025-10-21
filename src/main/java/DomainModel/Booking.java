@@ -1,19 +1,18 @@
 package DomainModel;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBooking;
-    private LocalDate date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
-    public Booking(int idBooking, LocalDate date) {
+    public Booking(int idBooking, Date date) {
         this.idBooking = idBooking;
         this.date = date;
     }
@@ -30,10 +29,10 @@ public class Booking {
         this.idBooking = idBooking;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

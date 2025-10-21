@@ -9,7 +9,10 @@ public class Occurrence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idOccurrence;
+
+    @Temporal(TemporalType.DATE)
     private Date date;
+
     private String hours;
 
     public Occurrence(int idOccurrence, Date date, String hours) {

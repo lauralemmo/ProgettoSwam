@@ -18,9 +18,11 @@ public abstract class User {
     @Id
     @Column(length = 16)
     private String tax_code;
-    private LocalDate birth_date;
 
-    public User(String name, String surname, String username, String password, String email, String phone_number, String tax_code, LocalDate birth_date){
+    @Temporal(TemporalType.DATE)
+    private Date birth_date;
+
+    public User(String name, String surname, String username, String password, String email, String phone_number, String tax_code, Date birth_date){
         this.name = name;
         this.surname = surname;
         this.username = username;
@@ -88,11 +90,11 @@ public abstract class User {
         this.tax_code = tax_code;
     }
 
-    public LocalDate getBirth_date() {
+    public Date getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(LocalDate birth_date) {
+    public void setBirth_date(Date birth_date) {
         this.birth_date = birth_date;
     }
 

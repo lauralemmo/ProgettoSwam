@@ -2,23 +2,28 @@ package DomainModel;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.function.Consumer;
 
 @Entity
 public class PersonalTrainer extends User{
     private int salary;
     private boolean active;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
     @OneToMany
     private ArrayList<WorkoutPlan> workoutPlans;
     @OneToMany
     private ArrayList<Course> courses;
 
     public PersonalTrainer(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
-                           LocalDate birth_date, int salary, boolean active, LocalDate startDate, LocalDate endDate, LocalDate date, String personalTrainer) {
+                           Date birth_date, int salary, boolean active, Date startDate, Date endDate, Date date, String personalTrainer) {
         super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.salary = salary;
         this.active = active;
@@ -51,19 +56,19 @@ public class PersonalTrainer extends User{
         this.active = active;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
