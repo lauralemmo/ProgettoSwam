@@ -1,9 +1,6 @@
 package DomainModel;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,9 +12,9 @@ public class PersonalTrainer extends User{
     private boolean active;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany
+    @OneToMany(mappedBy = "personalTrainer")
     private ArrayList<WorkoutPlan> workoutPlans;
-    @OneToMany
+    @OneToMany(mappedBy = "personalTrainer")
     private ArrayList<Course> courses;
 
     public PersonalTrainer(String name, String surname, String username, String password, String email, String phone_number, String tax_code,

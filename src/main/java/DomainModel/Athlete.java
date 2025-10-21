@@ -1,19 +1,19 @@
 package DomainModel;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 @Entity
 public class Athlete extends User {
     private String height;
     private String weight;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Subscription subscription;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private WorkoutPlan workoutPlan;
     @OneToMany
     private ArrayList<Booking> bookings;

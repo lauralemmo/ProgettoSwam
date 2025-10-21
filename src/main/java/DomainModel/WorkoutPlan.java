@@ -13,7 +13,19 @@ public class WorkoutPlan {
     private LocalDate date;
     @OneToMany
     private ArrayList<ExerciseWorkoutPlan> exercises;
-    private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplicità)
+    private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplici
+    // tà) Se teniamo così possiamo rimuovere l'associazione con PersonalTrainer
+    @ManyToOne
+    @JoinColumn(name = "personal_trainer_tax_code")
+    private PersonalTrainer personalTrainer;
+
+    public PersonalTrainer getPersonalTrainer() {
+        return personalTrainer;
+    }
+
+    public void setPersonalTrainer(PersonalTrainer personalTrainer) {
+        this.personalTrainer = personalTrainer;
+    }
 
     public WorkoutPlan(LocalDate date) {
         this.date = date;
