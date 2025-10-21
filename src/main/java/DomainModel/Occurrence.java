@@ -2,6 +2,7 @@ package DomainModel;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Embeddable
@@ -12,11 +13,12 @@ public class Occurrence {
 
     private LocalDate date;
 
-    private String hours;
+    private LocalTime hours;
 
-    public Occurrence(LocalDate date, String hours) {
+    public Occurrence(LocalDate date, LocalTime hours) {
         this.date = date;
         this.hours = hours;
+
     }
 
     protected Occurrence() {
@@ -31,11 +33,11 @@ public class Occurrence {
         this.date = date;
     }
 
-    public String getHours() {
+    public LocalTime getHours() {
         return hours;
     }
 
-    public void setHours(String hours) {
+    public void setHours(LocalTime hours) {
         this.hours = hours;
     }
 }
