@@ -27,6 +27,10 @@ public class Athlete extends User {
         this.bookings = new ArrayList<>();
     }
 
+    protected Athlete() {
+        super();
+    }
+
     public String getHeight() {
         return height;
     }

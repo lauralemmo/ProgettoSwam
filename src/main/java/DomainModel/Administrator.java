@@ -20,4 +20,8 @@ public class Administrator {
         this.courses = new ArrayList<>();
         this.personalTrainers = new ArrayList<>();
     }
+
+    protected Administrator() {
+
+    }
 }

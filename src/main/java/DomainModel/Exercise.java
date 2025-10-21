@@ -18,6 +18,13 @@ public class Exercise {
         this.name = name;
         this.description = description;
     }
+    public Exercise(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+    protected Exercise() {
+
+    }
 //metodi getter e setter
 
 

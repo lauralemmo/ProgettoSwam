@@ -2,19 +2,24 @@ package DomainModel;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Occurrence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idOccurrence;
-    private LocalDate date;
+    private Date date;
     private String hours;
 
-    public Occurrence(int idOccurrence, LocalDate date, String hours) {
+    public Occurrence(int idOccurrence, Date date, String hours) {
         this.idOccurrence = idOccurrence;
         this.date = date;
         this.hours = hours;
+    }
+
+    protected Occurrence() {
+
     }
 
     public int getIdOccurrence() {
@@ -25,11 +30,11 @@ public class Occurrence {
         this.idOccurrence = idOccurrence;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

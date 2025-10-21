@@ -15,9 +15,6 @@ public class WorkoutPlan {
     private ArrayList<ExerciseWorkoutPlan> exercises;
     private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplicità)
 
-
-
-
     public WorkoutPlan(LocalDate date) {
         this.date = date;
         this.exercises = new ArrayList<>();
@@ -35,7 +32,7 @@ public class WorkoutPlan {
         this.exercises = new ArrayList<>();
     }
 
-    public WorkoutPlan() {
+    protected WorkoutPlan() {
         this.exercises = new ArrayList<>();
     }
 

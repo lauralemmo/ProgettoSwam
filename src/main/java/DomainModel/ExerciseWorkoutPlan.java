@@ -20,6 +20,19 @@ public class ExerciseWorkoutPlan {
         this.weight = weight;
         this.exercise = exercise;
     }
+    //Costruttore senza idEW per permettere a JPA di generarlo automaticamente
+    public ExerciseWorkoutPlan(int numSeries, int numRepetitions, double weight, Exercise exercise) {
+        this.idEW = idEW;
+        this.numSeries = numSeries;
+        this.numRepetitions = numRepetitions;
+        this.weight = weight;
+        this.exercise = exercise;
+    }
+
+    protected ExerciseWorkoutPlan() {
+
+    }
+
 
     public int getIdEW() {
         return idEW;

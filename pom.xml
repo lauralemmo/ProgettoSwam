@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!-- Jakarta EE APIs -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>

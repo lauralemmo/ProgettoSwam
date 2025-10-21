@@ -18,6 +18,10 @@ public class Booking {
         this.date = date;
     }
 
+    protected Booking() {
+
+    }
+
     public int getIdBooking() {
         return idBooking;
     }

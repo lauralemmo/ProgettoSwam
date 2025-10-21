@@ -6,12 +6,12 @@ public class ConcreteWorkoutPlanBuilder implements WorkoutPlanBuilder {
 
     @Override
     public ConcreteWorkoutPlanBuilder addExercise(Exercise exercise, int numSeries, int numRepetitions, double weight) {
-        workoutPlan.addExercise(new ExerciseWorkoutPlan(exercise, numSeries, numRepetitions, weight));
+        workoutPlan.addExercise(new ExerciseWorkoutPlan(numSeries, numRepetitions, weight, exercise));
         return this;
     }
 
     public ConcreteWorkoutPlanBuilder setTrainer(String name){
-        workoutPlan.setPersonalTrainer(name);
+        workoutPlan.setPersonalTrainerName(name);
         return this;
     }
     @Override

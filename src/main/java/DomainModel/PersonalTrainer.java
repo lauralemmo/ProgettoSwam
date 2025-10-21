@@ -31,6 +31,10 @@ public class PersonalTrainer extends User{
         super(name);
     }
 
+    protected PersonalTrainer() {
+
+    }
+
     public int getSalary() {
         return salary;
     }

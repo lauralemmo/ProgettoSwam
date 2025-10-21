@@ -26,6 +26,10 @@ public class Subscription {
         this.active = active;
     }
 
+    protected Subscription() {
+
+    }
+
     public int getIdSubscription() {
         return idSubscription;
     }
