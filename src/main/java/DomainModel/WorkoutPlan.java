@@ -11,11 +11,11 @@ public class WorkoutPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idWorkoutPlan;
     private LocalDate date;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) //orphanRemoval per rimuovere gli esercizi associati quando si elimina il piano
     private ArrayList<ExerciseWorkoutPlan> exercises;
     private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplici
     // tà) Se teniamo così possiamo rimuovere l'associazione con PersonalTrainer
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "personal_trainer_tax_code")
     private PersonalTrainer personalTrainer;
 

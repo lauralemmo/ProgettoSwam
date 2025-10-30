@@ -10,23 +10,29 @@ public class ExerciseWorkoutPlan {
     private int numSeries;
     private int numRepetitions;
     private double weight;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exercise_id") //nome della colonna nella tabella ExerciseWorkoutPlan che fa riferimento a Exercise
     private Exercise exercise;
+    @ManyToOne
+    @JoinColumn(name = "workout_plan_id") //nome della colonna nella tabella ExerciseWorkoutPlan che fa riferimento a WorkoutPlan
+    private WorkoutPlan workoutPlan;
 
-    public ExerciseWorkoutPlan(int idEW, int numSeries, int numRepetitions, double weight, Exercise exercise) {
+    public ExerciseWorkoutPlan(int idEW, int numSeries, int numRepetitions, double weight, Exercise exercise, WorkoutPlan workoutPlan) {
         this.idEW = idEW;
         this.numSeries = numSeries;
         this.numRepetitions = numRepetitions;
         this.weight = weight;
         this.exercise = exercise;
+        this.workoutPlan = workoutPlan;
     }
     //Costruttore senza idEW per permettere a JPA di generarlo automaticamente
-    public ExerciseWorkoutPlan(int numSeries, int numRepetitions, double weight, Exercise exercise) {
+    public ExerciseWorkoutPlan(int numSeries, int numRepetitions, double weight, Exercise exercise, WorkoutPlan workoutPlan) {
         this.idEW = idEW;
         this.numSeries = numSeries;
         this.numRepetitions = numRepetitions;
         this.weight = weight;
         this.exercise = exercise;
+        this.workoutPlan = workoutPlan;
     }
 
     protected ExerciseWorkoutPlan() {

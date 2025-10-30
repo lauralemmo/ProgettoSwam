@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Athlete extends User {
     private String height;
     private String weight;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL) //cascade per propagare le operazioni (persist, remove, ecc.) all'entità associata
     private Subscription subscription;
     @OneToOne(cascade = CascadeType.ALL)
     private WorkoutPlan workoutPlan;

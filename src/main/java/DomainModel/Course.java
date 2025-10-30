@@ -17,7 +17,7 @@ public class Course {
     @ElementCollection
     @CollectionTable(name = "course_occurrences", joinColumns = @JoinColumn(name = "course_id"))
     private ArrayList<Occurrence> occurrences;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "personal_trainer_code")
     private PersonalTrainer personalTrainer;
 

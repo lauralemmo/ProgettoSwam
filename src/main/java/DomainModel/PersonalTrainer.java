@@ -12,9 +12,9 @@ public class PersonalTrainer extends User{
     private boolean active;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany(mappedBy = "personalTrainer")
+    @OneToMany(mappedBy = "personalTrainer") //Il "personalTrainer" è il nome dell'attributo in WorkoutPlan che fa riferimento a PersonalTrainer
     private ArrayList<WorkoutPlan> workoutPlans;
-    @OneToMany(mappedBy = "personalTrainer")
+    @OneToMany(mappedBy = "personalTrainer") //Il "personalTrainer" è il nome dell'attributo in Course che fa riferimento a PersonalTrainer
     private ArrayList<Course> courses;
 
     public PersonalTrainer(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
