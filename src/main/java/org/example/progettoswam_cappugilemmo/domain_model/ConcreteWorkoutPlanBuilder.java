@@ -1,4 +1,4 @@
-package org.example.progettoswam_cappugilemmo.DomainModel;
+package org.example.progettoswam_cappugilemmo.domain_model;
 
 public class ConcreteWorkoutPlanBuilder implements WorkoutPlanBuilder {
 

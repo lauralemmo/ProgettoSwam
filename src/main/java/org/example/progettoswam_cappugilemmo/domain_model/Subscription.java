@@ -1,4 +1,4 @@
-package org.example.progettoswam_cappugilemmo.DomainModel;
+package org.example.progettoswam_cappugilemmo.domain_model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
