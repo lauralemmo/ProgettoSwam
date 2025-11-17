@@ -1,4 +1,4 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
 public class main{
     public static void main(String[] args) {

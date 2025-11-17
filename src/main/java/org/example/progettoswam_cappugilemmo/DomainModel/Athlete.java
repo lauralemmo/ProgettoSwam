@@ -1,9 +1,6 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -11,7 +8,7 @@ import java.util.ArrayList;
 public class Athlete extends User {
     private String height;
     private String weight;
-    @OneToOne(cascade = CascadeType.ALL) //cascade per propagare le operazioni (persist, remove, ecc.) all'entità associata
+    @Embedded
     private Subscription subscription;
     @OneToOne(cascade = CascadeType.ALL)
     private WorkoutPlan workoutPlan;

@@ -1,6 +1,6 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class ExerciseWorkoutPlan {
@@ -13,7 +13,7 @@ public class ExerciseWorkoutPlan {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exercise_id") //nome della colonna nella tabella ExerciseWorkoutPlan che fa riferimento a Exercise
     private Exercise exercise;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "workout_plan_id") //nome della colonna nella tabella ExerciseWorkoutPlan che fa riferimento a WorkoutPlan
     private WorkoutPlan workoutPlan;
 

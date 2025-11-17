@@ -1,4 +1,4 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
 public interface WorkoutPlanBuilder {
     ConcreteWorkoutPlanBuilder addExercise(Exercise exercise, int numSeries, int numRepetitions, double weight);

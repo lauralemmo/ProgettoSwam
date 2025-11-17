@@ -1,10 +1,9 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import jakarta.annotation.Generated;
-
-import javax.persistence.*;
+//import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+
 @MappedSuperclass //impedisce query su User (query polimorfiche)
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity

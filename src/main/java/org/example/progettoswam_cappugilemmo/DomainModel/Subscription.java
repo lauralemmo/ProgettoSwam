@@ -1,14 +1,13 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
+@Embeddable
 public class Subscription {
-    @Id
+/*    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSubscription;
+    private int idSubscription;*/
     private LocalDate start_date;
     private LocalDate end_date;
     private String price;
@@ -16,7 +15,7 @@ public class Subscription {
     private boolean active;
 
     public Subscription(int idSubscription, LocalDate start_date, LocalDate end_date, String price, String type, boolean active) {
-        this.idSubscription = idSubscription;
+ //       this.idSubscription = idSubscription;
         this.start_date = start_date;
         this.end_date = end_date;
         this.price = price;
@@ -28,13 +27,13 @@ public class Subscription {
 
     }
 
-    public int getIdSubscription() {
+ /*   public int getIdSubscription() {
         return idSubscription;
-    }
+    }*/
 
-    public void setIdSubscription(int idSubscription) {
+ /*   public void setIdSubscription(int idSubscription) {
         this.idSubscription = idSubscription;
-    }
+    }*/
 
     public LocalDate getStart_date() {
         return start_date;

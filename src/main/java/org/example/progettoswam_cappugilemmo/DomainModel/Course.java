@@ -1,7 +1,7 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 
 @Entity

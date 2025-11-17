@@ -1,9 +1,5 @@
-package DomainModel;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+package org.example.progettoswam_cappugilemmo.DomainModel;
+import jakarta.persistence.*;
 
 @Entity
 public class Exercise {

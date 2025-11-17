@@ -1,9 +1,8 @@
-package DomainModel;
+package org.example.progettoswam_cappugilemmo.DomainModel;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Embeddable
 public class Occurrence {
