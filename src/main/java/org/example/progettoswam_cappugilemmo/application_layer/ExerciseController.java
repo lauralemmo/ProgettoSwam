@@ -12,8 +12,12 @@ public class ExerciseController {
 
     @Transactional //apre e chiude la transazione automaticamente
     public void createExercise(String name, String description) {
-        Exercise newExercise = new Exercise(name, description);
-        exerciseDAO.aggiungi(newExercise);
+        Exercise exercise = new Exercise(name, description);
+        exerciseDAO.createExercise(exercise);
     }
 
+    @Transactional
+    public void getExerciseByName(String name) {
+
+    }
 }

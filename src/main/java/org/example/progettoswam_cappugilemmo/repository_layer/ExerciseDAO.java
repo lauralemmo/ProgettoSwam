@@ -13,9 +13,22 @@ public class ExerciseDAO {
     @PersistenceContext
     private EntityManager em;
 
-    public void aggiungi(Exercise e) {
+    public void createExercise(Exercise e) {
         em.persist(e);
     }
+
+    public Exercise getExerciseByName(String name) {
+        return em.createQuery("SELECT e FROM Exercise e WHERE e.name = :name", Exercise.class)
+                .setParameter("name", name)
+                .getSingleResult();
+    }
+
+
+
+
+
+
+
     public List<Exercise> selectAll() {
         return em.createQuery("SELECT e FROM Exercise e", Exercise.class).getResultList();
     }
