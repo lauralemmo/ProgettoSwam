@@ -6,15 +6,11 @@ import org.example.progettoswam_cappugilemmo.repository_layer.ExerciseDAO;
 
 public class ExerciseController {
 
-    @Inject
-    Exercise exercise;
+    @Inject //il server inietta automaticamente l'istanza di ExerciseDAO
     private ExerciseDAO exerciseDAO;
 
-    ExerciseController() {
-        exerciseDAO = new ExerciseDAO();
-    }
 
-    @Transactional
+    @Transactional //apre e chiude la transazione automaticamente
     public void createExercise(String name, String description) {
         Exercise newExercise = new Exercise(name, description);
         exerciseDAO.aggiungi(newExercise);
