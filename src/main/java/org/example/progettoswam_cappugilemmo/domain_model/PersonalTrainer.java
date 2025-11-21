@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 @Entity
 public class PersonalTrainer extends User{
     private int salary;
-    private boolean active;
+    private boolean active = false;
     private LocalDate startDate;
     private LocalDate endDate;
     @OneToMany(mappedBy = "personalTrainer") //Il "personalTrainer" è il nome dell'attributo in WorkoutPlan che fa riferimento a PersonalTrainer
@@ -18,10 +18,9 @@ public class PersonalTrainer extends User{
     private ArrayList<Course> courses;
 
     public PersonalTrainer(String name, String surname, String username, String password, String email, String phone_number, String tax_code,
-                           LocalDate birth_date, int salary, boolean active, LocalDate startDate, LocalDate endDate, Date date, String personalTrainer) {
+                           LocalDate birth_date, int salary, LocalDate startDate, LocalDate endDate, Date date, String personalTrainer) {
         super(name, surname, username, password, email, phone_number, tax_code, birth_date);
         this.salary = salary;
-        this.active = active;
         this.startDate = startDate;
         this.endDate = endDate;
         this.workoutPlans = new ArrayList<>();
