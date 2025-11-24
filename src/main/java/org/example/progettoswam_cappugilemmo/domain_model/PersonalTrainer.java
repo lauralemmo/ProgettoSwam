@@ -84,7 +84,7 @@ public class PersonalTrainer extends User{
 
     // questo metodo andrà poi nella business logic
     public WorkoutPlan createPlan(WorkoutPlanBuilder workoutPlanBuilder, Consumer<WorkoutPlanBuilder> strategy) {
-        workoutPlanBuilder.setTrainer(this.getName());
+        workoutPlanBuilder.setTrainer(this);
         strategy.accept(workoutPlanBuilder);
         return workoutPlanBuilder.buildWorkoutPlan();
     }

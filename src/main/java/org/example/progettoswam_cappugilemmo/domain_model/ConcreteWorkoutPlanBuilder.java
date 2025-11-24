@@ -6,12 +6,16 @@ public class ConcreteWorkoutPlanBuilder implements WorkoutPlanBuilder {
 
     @Override
     public ConcreteWorkoutPlanBuilder addExercise(Exercise exercise, int numSeries, int numRepetitions, double weight) {
+        if (exercise == null) {
+            throw new IllegalArgumentException("Exercise cannot be null");
+        }
         workoutPlan.addExercise(new ExerciseWorkoutPlan(numSeries, numRepetitions, weight, exercise, this.workoutPlan));
         return this;
     }
 
-    public ConcreteWorkoutPlanBuilder setTrainer(String name){
-        workoutPlan.setPersonalTrainerName(name);
+    @Override
+    public ConcreteWorkoutPlanBuilder setTrainer(PersonalTrainer pt){
+        workoutPlan.setPersonalTrainerName(pt);
         return this;
     }
     @Override

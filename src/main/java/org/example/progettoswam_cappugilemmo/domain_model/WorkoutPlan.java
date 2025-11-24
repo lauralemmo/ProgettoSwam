@@ -10,7 +10,8 @@ public class WorkoutPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idWorkoutPlan;
     private LocalDate date;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) //orphanRemoval per rimuovere gli esercizi associati quando si elimina il piano
+    //mappedby indica che la relazione è gestita dal lato "ExerciseWorkoutPlan" attraverso l'attributo "workoutPlan"
+    @OneToMany(mappedBy = "workoutPlan", cascade = CascadeType.ALL, orphanRemoval = true) //orphanRemoval per rimuovere gli esercizi associati quando si elimina il piano
     private ArrayList<ExerciseWorkoutPlan> exercises;
     private String personalTrainerName; // nome del personal trainer che ha creato il piano (è una stringa per semplici
     // tà) Se teniamo così possiamo rimuovere l'associazione con PersonalTrainer
@@ -94,5 +95,8 @@ public class WorkoutPlan {
 
     public void setPersonalTrainerName(String personalTrainerName) {
         this.personalTrainerName = personalTrainerName;
+    }
+    public void setPersonalTrainerName(PersonalTrainer pt) {
+        this.personalTrainerName = pt.getName();
     }
 }
