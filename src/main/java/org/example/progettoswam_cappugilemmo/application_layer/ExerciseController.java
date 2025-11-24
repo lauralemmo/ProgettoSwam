@@ -4,6 +4,9 @@ import org.example.progettoswam_cappugilemmo.domain_model.Exercise;
 import jakarta.inject.Inject;
 import org.example.progettoswam_cappugilemmo.repository_layer.ExerciseDAO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExerciseController {
 
     @Inject //il server inietta automaticamente l'istanza di ExerciseDAO
@@ -11,13 +14,35 @@ public class ExerciseController {
 
 
     @Transactional //apre e chiude la transazione automaticamente
-    public void createExercise(String name, String description) {
+    public boolean addExercise(String name, String description) {
         Exercise exercise = new Exercise(name, description);
-        exerciseDAO.createExercise(exercise);
+        return exerciseDAO.createExercise(exercise);
     }
 
     @Transactional
-    public void getExerciseByName(String name) {
+    public Exercise searchExerciseByName(String name) {
+        Exercise exercise = exerciseDAO.getExerciseByName(name);
 
+        if(exercise != null){
+            return exercise;
+        }
+        else
+            return null;
     }
+
+    @Transactional
+    public List<Exercise> getAllExercises() {
+        return exerciseDAO.getAllExercises();
+    }
+
+    @Transactional
+    public void updateExercise(Exercise exercise){
+        exerciseDAO.updateExercise(exercise);
+    }
+
+    @Transactional
+    public void removeExercise(Exercise exercise){
+        exerciseDAO.deleteExercise(exercise);
+    }
+
 }

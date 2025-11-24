@@ -6,6 +6,7 @@ public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idExercise;
+    @Column(unique = true)
     private String name;
     private String description;
 

@@ -13,9 +13,19 @@ public class ExerciseDAO {
     @PersistenceContext
     private EntityManager em;
 
-    public void createExercise(Exercise e) {
-        em.persist(e);
+
+    public boolean createExercise(Exercise e) {
+        try{
+            em.persist(e);
+            System.out.println("nuovo esercizio creato con successo");
+            return true;
+        }
+        catch(Exception ex){
+            System.out.println("creazione esercizio non riuscita");
+            return false;
+        }
     }
+
 
     public Exercise getExerciseByName(String name) {
         return em.createQuery("SELECT e FROM Exercise e WHERE e.name = :name", Exercise.class)
@@ -24,13 +34,40 @@ public class ExerciseDAO {
     }
 
 
-
-
-
-
-
-    public List<Exercise> selectAll() {
+    public List<Exercise> getAllExercises(){
         return em.createQuery("SELECT e FROM Exercise e", Exercise.class).getResultList();
     }
+
+
+    /*public Exercise getExerciseByName(String name){
+        em.find(Exercise.class, name);
+    }*/
+
+
+    public boolean updateExercise(Exercise e) {
+        try{
+            em.merge(e);
+            System.out.println("modifica avvenuta");
+            return true;
+        }
+        catch(Exception ex){
+            System.out.println("modifica non riuscita");
+            return false;
+        }
+    }
+
+
+    public boolean deleteExercise(Exercise e) {
+        try{
+            em.remove(e);
+            System.out.println("cancellazione esercizio avvenuta con successo");
+            return true;
+        }
+        catch(Exception ex){
+            System.out.println("cancellazione non riuscita");
+            return false;
+        }
+    }
+
 
 }
