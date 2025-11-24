@@ -24,4 +24,7 @@ public class PersonalTrainerDAO {
     public void deletePersonalTrainer(PersonalTrainer pt) {
         em.remove(em.contains(pt) ? pt : em.merge(pt)); // Assicura che l'entità sia gestita prima di rimuoverla
     }
+    public void updatePersonalTrainer(PersonalTrainer pt) {
+        em.merge(pt);
+    }
 }

@@ -12,6 +12,7 @@ public class Course {
     private String name;
     private int numMembers;
     private int numMax;
+    boolean isBookable;
     @OneToMany
     private ArrayList<Booking> bookings;
     @ElementCollection
@@ -21,8 +22,7 @@ public class Course {
     @JoinColumn(name = "personal_trainer_code")
     private PersonalTrainer personalTrainer;
 
-    public Course(int idCourse, String name, int numMembers, int numMax) {
-        this.idCourse = idCourse;
+    public Course(String name, int numMembers, int numMax) {
         this.name = name;
         this.numMembers = numMembers;
         this.numMax = numMax;
@@ -82,4 +82,17 @@ public class Course {
     public void setOccurrences(ArrayList<Occurrence> occurrences) {
         this.occurrences = occurrences;
     }
+
+    public PersonalTrainer getPersonalTrainer() {
+        return personalTrainer;
+    }
+
+    public void setPersonalTrainer(PersonalTrainer personalTrainer) {
+        this.personalTrainer = personalTrainer;
+    }
+
+    public boolean isBookable() {
+        return this.personalTrainer != null && this.numMembers < this.numMax;
+    }
+
 }

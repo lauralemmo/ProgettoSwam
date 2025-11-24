@@ -3,6 +3,7 @@ package org.example.progettoswam_cappugilemmo.domain_model;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Embeddable
 public class Occurrence {
@@ -38,5 +39,14 @@ public class Occurrence {
 
     public void setHours(LocalTime hours) {
         this.hours = hours;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Occurrence that = (Occurrence) o;
+        return Objects.equals(date, that.date) &&
+                Objects.equals(hours, that.hours);
     }
 }
