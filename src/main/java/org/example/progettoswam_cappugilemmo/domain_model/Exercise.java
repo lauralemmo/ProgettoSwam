@@ -22,8 +22,9 @@ public class Exercise {
     protected Exercise() {
 
     }
-//metodi getter e setter
 
+
+    //metodi getter e setter
 
     public int getIdExercise() {
         return idExercise;

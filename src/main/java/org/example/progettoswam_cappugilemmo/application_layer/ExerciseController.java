@@ -19,6 +19,7 @@ public class ExerciseController {
         return exerciseDAO.createExercise(exercise);
     }
 
+
     @Transactional
     public Exercise searchExerciseByName(String name) {
         Exercise exercise = exerciseDAO.getExerciseByName(name);
@@ -27,22 +28,24 @@ public class ExerciseController {
             return exercise;
         }
         else
-            return null;
+            throw new IllegalArgumentException("Esercizio non trovato");
     }
+
 
     @Transactional
     public List<Exercise> getAllExercises() {
         return exerciseDAO.getAllExercises();
     }
 
+
     @Transactional
-    public void updateExercise(Exercise exercise){
-        exerciseDAO.updateExercise(exercise);
+    public boolean updateExercise(Exercise exercise){
+        return exerciseDAO.updateExercise(exercise);
     }
 
     @Transactional
-    public void removeExercise(Exercise exercise){
-        exerciseDAO.deleteExercise(exercise);
+    public boolean removeExercise(Exercise exercise){
+        return exerciseDAO.deleteExercise(exercise);
     }
 
 }

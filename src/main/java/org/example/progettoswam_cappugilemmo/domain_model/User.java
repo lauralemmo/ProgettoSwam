@@ -10,6 +10,7 @@ import java.time.LocalDate;
 public abstract class User {
     private String name;
     private String surname;
+    @Column(unique = true)
     private String username;
     private String password;
     private String email;
@@ -31,7 +32,7 @@ public abstract class User {
         this.birth_date = birth_date;
     }
 
-    // Getters and Setters
+
     public User(String name){
         this.name = name;
     }
@@ -40,6 +41,8 @@ public abstract class User {
 
     }
 
+
+    // Getters and Setters
     public String getName() {
         return name;
     }
